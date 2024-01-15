@@ -4,11 +4,9 @@ while True:
     if menu == '1':
         fahrenheit = float(input('Input Fahrenheit : '))
         print(f'Fahrenheit : {fahrenheit}F, Celsius :{((fahrenheit-32.0)*5.0/9.0):.4f}C')
-        continue
     elif menu == "2":
         celsius = float(input('Input Fahrenheit : '))
         print(f'Fahrenheit : {celsius}F, Celsius :{((celsius * 9.0 / 5.0) +32.0):.4f}C')
-        continue
     elif menu == "3":
         print("Quit")
         break
