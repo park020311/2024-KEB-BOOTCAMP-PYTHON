@@ -1,21 +1,13 @@
-# SyntaxError: cannot assign to literal here. Maybe you meant '==' instead of '='?
-#
-# "univ" = "university"
+# money = 5,000,000
+# print(money)
+# print(type(money)) # tuple
+# cash = 5_000_000
+# print(cash)
+# print(type(cash)) # int
 
-# 0k
-# case-sensitive
-# abc = 7
-# Abc = 8
-# ABC = 6
-# print(abc, Abc, ABC)
-
-# artist = ['BTS', 'New Jeans', 'SES', 'Black Pink']
-# groups = artist
-# print(artist, groups)
-# artist[2] = 'seven teen'
-# print(artist, groups)
-
-
+base_number = int(input('Input base number : '))
+exponent_number = int(input('Input exponent number : '))
+print(f'밑은 {base_number},지수는 {exponent_number},결과 값은 {base_number**exponent_number}')
 
 
 
