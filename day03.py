@@ -1,9 +1,9 @@
 # prime number
 number = int(input("Input number : "))
-
+is_prime = True
 if number<1:
     print(f'{number} is prime number')
-    is_prime = True
+
 
 else:
     i = 2
