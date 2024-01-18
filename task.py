@@ -1,29 +1,36 @@
-#8.6
-life ={"animals" : {"cats" : "Henry", "octopi" : "Grumpy", "emus" : "Lucy"},"plants" : {}, "others" : {}}
-#8.7
-for high_key in life:
-    print(high_key)
-#8.8
-
-print(life["animals"].keys())
-#8.9
-print(life["animals"].values())
-print(life["animals"]["cats"]) # 여기서는 왜 values()를 붙이면 안되는지?
-#8.10
-# 딕셔너리 컴프리헨션 교수님 설명
-
-# univ = 'inha university'
-# count_alphabet={letter:univ.count(letter) for letter in univ} # dictionary comprehension
-# print(count_alphabet)
-
-# univ = 'inha university'
-# count_alphabet= dict()
-# for letter in univ:
-#     count_alphabet[letter] = univ.count(letter)
-# print(count_alphabet)
-
-#Assignment 8.10
-# squares = {n:pow(n,2) for n in range(10)}
-# squares = {n:n*n for n in range(10)}
-squares = {n:n**2 for n in range(10)}
-print(squares)
+#9.1
+def good():
+    print(['Harry','Ron','Hermione'])
+good()
+#9.2
+def get_odds(first = 0, last = 10):
+    num =first
+    while num < last:
+        if(num%2==1):
+            yield num
+        num+=1
+i=0
+for x in get_odds():
+   i+=1
+   if i==3:
+       print(x)
+#9.3
+def test(func):
+    def new_function(*args,**kwargs):
+        print("함수호출")
+        result = func(*args,**kwargs)
+        print(result)
+        print("함수종료")
+        return result
+    return new_function
+@test
+def int_add(a,b):
+    return a+b
+int_add(3,5)
+#9.4
+class OopsException(Exception):
+   pass
+try:
+    raise OopsException
+except OopsException as err:
+    print("Caught an oops")
