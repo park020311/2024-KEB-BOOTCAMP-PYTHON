@@ -1,24 +1,17 @@
-def factorial_repetition(n)->int:
-    """
-    반복문을 이용한 팩토리얼 함수
-    :param n: 정수
-    :return: 팩토리얼 값
-    """
-    result = 1
-    for i in range(2, n+1):
-        result = result * i
-    return result
+#import random
+import random
 
-def factorial_recursion(n):
-    """
-    재귀함수를 사용한 팩토리얼 함수
-    :param n: 정수, int
-    :return: function
-    """
-    if n == 1:
-        return n
-    else:
-        return  n* factorial_repetition(n-1)
-print(factorial_repetition(int(input("number : "))))
-print(factorial_recursion(int(input("number : "))))
-print(globals())
+# numbers = list()
+# for i in range(5):
+#     numbers.append(random.randint(1,100))
+numbers = [random.randint(1,100) for i in range(5)]
+print(numbers)
+try:
+    pick = int(input(f"Input index (0~{len(numbers)-1}) : "))
+    print(numbers[pick]) # numbers는 총 0~4 까지 할당되었기 때문에 5 이상을 입력하면 에러
+except IndexError as err:
+    print(f"Out of range : Wrong index number\n{err}")
+except ValueError as err:
+    print(f"Input Only Number !\n{err}")
+except Exception:
+    print("Error occurs")
