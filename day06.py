@@ -1,29 +1,19 @@
+class FlyingMixin:
+    def fly(self):
+        return f"{self.name}이(가) 하늘을 훨훨 날아갑니다~"
+class SwimmingMixin:
+    def swim(self):
+        return f"{self.name}이(가) 수영을 합니다."
 class Pokemon:
     def __init__(self,name):
-        self.name=name
-    def attack(self,target):
-        print(f"{self.name}이(가) {target.name}을(를) 공격!")
-class Pikachu(Pokemon):
-    def __init__(self,name,type):
-        super().__init__(name)
-        self.type=type
-    def attack(self,target):
-        print(f"{self.name}이(가) {target.name}을(를) 백만볼트 공격!")
-    def electric_info(self):
-        print("전기 계열의 공격을 주로 합니다")
-class Squirtle(Pokemon):
+        self.name = name
+class Charizard(Pokemon,FlyingMixin):
     pass
 
-
-class Agumon:
+class Gyarados(Pokemon,SwimmingMixin):
     pass
+g1 = Gyarados("갸라도스")
+c1 = Charizard("리자몽")
 
-p1 = Pikachu("피카츄","전기")
-p2 = Squirtle("꼬부기")
-p3 = Pokemon("아무개")
-p1.electric_info()
-p1.attack(p2)
-p2.attack(p1)
-print(p1.name)
-print(issubclass(Pikachu,Pokemon))
-print(issubclass(Pikachu,Pokemon))
+print(c1.fly())
+print(g1.swim())
