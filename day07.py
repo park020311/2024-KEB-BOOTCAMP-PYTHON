@@ -17,11 +17,11 @@ class FlyWithWings(FlyingBehavior):
     def fly(self):
         return f"날개로 하늘을 훨훨 날아갑니다"
 
-class Pikachu():
-    def __init__(self,name,hp,fly):
+class Pikachu:
+    def __init__(self,name,hp):
         self.name = name
-        self.hp =hp
-        self.fly_behavior = fly # aggregation
-nofly = NoFly()
-p1 = Pikachu("피카츄", 35, nofly)
+        self.hp = hp
+        self.fly_behavior = NoFly() # composition
+
+p1 = Pikachu("피카츄", 35)
 print(p1.fly_behavior.fly())
